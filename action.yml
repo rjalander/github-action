@@ -23,5 +23,16 @@ inputs:
       required:
       default: 0.0.1
 runs:
-  using: 'docker'
-  image: './Dockerfile'
+  using: 'composite'
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Run shell script
+      run: ./entrypoint.sh
+      env:
+        INPUT_SOURCE: ${{ inputs.source }}
+        INPUT_SUBJECT_ID: ${{ inputs.subject_id }}
+        INPUT_SUBJECT_PIPELINE_NAME: ${{ inputs.subject_pipeline_name }}
+        INPUT_SUBJECT_URL: ${{ inputs.subject_url }}
+        INPUT_VERSION: ${{ inputs.version }}
+
