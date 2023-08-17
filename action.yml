@@ -33,7 +33,10 @@ runs:
         path: ./
     - name: Run shell script
       shell: bash
-      run: ./entrypoint.sh
+      run: |
+        #!/bin/bash
+        chmod +x ./entrypoint.sh
+        ./entrypoint.sh
       env:
         INPUT_SOURCE: ${{ inputs.source }}
         INPUT_SUBJECT_ID: ${{ inputs.subject_id }}
