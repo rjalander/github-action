@@ -16,6 +16,7 @@ RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
 RUN apk add curl
 RUN apk add nodejs npm
+RUN apk add --no-cache util-linux
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 RUN chmod +x /entrypoint.sh
