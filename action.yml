@@ -24,11 +24,11 @@ inputs:
       default: 0.0.1
 runs:
   using: 'composite'
-  shell: bash
   steps:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: Run shell script
+      shell: bash
       run: ./entrypoint.sh
       env:
         INPUT_SOURCE: ${{ inputs.source }}
