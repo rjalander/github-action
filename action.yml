@@ -24,6 +24,7 @@ inputs:
       default: 0.0.1
 runs:
   using: 'composite'
+  shell: bash
   steps:
     - name: Checkout repository
       uses: actions/checkout@v2
