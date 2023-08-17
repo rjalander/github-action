@@ -25,6 +25,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Checkout script repository
+      uses: actions/checkout@v3
+      with:
+        repository: rjalander/github-action
+        ref: main
+        path: ./
     - name: Run shell script
       shell: bash
       run: ./entrypoint.sh
