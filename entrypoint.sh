@@ -16,7 +16,7 @@ echo "$publish" >> "${HOME}/${GITHUB_ACTION}.log"
 
 ce_id=$(uuidgen)
 
-events_broker="http://10.101.1.48:8010/default/events-broker"
+events_broker="http://10.101.1.117:8010/default/events-broker"
 
 curl -v -X POST \
   -H "Ce-Id: $ce_id" -H "Ce-Specversion: 1.0" -H "Ce-Type: cd.change.merged.v1" -H "Ce-Source: $INPUT_SOURCE" -H "Content-Type: application/json" \
